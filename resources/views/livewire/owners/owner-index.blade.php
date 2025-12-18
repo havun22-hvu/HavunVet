@@ -31,26 +31,26 @@
                         <div class="sm:col-span-2">
                             <label for="name" class="block text-sm font-medium text-gray-700">Naam *</label>
                             <input type="text" wire:model="name" id="name"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                             @error('name') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
                         </div>
 
                         <div>
                             <label for="phone" class="block text-sm font-medium text-gray-700">Telefoon 1</label>
                             <input type="tel" wire:model="phone" id="phone"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                         </div>
 
                         <div>
                             <label for="phone2" class="block text-sm font-medium text-gray-700">Telefoon 2</label>
                             <input type="tel" wire:model="phone2" id="phone2"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                         </div>
 
                         <div class="sm:col-span-2">
                             <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                             <input type="email" wire:model="email" id="email"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                         </div>
 
                         <!-- Postcode lookup -->
@@ -59,12 +59,12 @@
                             <div class="flex gap-2">
                                 <div class="flex-1">
                                     <input type="text" wire:model="postal_code" id="postal_code"
-                                           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"
+                                           class="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"
                                            placeholder="Postcode (1234AB)">
                                 </div>
                                 <div class="w-24">
                                     <input type="text" wire:model="house_number" id="house_number"
-                                           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"
+                                           class="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"
                                            placeholder="Nr.">
                                 </div>
                                 <button type="button" wire:click="lookupAddress"
@@ -81,19 +81,19 @@
                         <div class="sm:col-span-2">
                             <label for="address" class="block text-sm font-medium text-gray-700">Straat</label>
                             <input type="text" wire:model="address" id="address"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                         </div>
 
                         <div>
                             <label for="city" class="block text-sm font-medium text-gray-700">Plaats</label>
                             <input type="text" wire:model="city" id="city"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                         </div>
 
                         <div>
                             <label for="ubn" class="block text-sm font-medium text-gray-700">UBN (fokkers)</label>
                             <input type="text" wire:model="ubn" id="ubn"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"
                                    placeholder="Optioneel">
                         </div>
 
@@ -108,7 +108,7 @@
                         <div class="sm:col-span-2">
                             <label for="notes" class="block text-sm font-medium text-gray-700">Notities</label>
                             <textarea wire:model="notes" id="notes" rows="3"
-                                      class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"></textarea>
+                                      class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"></textarea>
                         </div>
                     </div>
 
