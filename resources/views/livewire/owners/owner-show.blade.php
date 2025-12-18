@@ -154,9 +154,16 @@
                         </div>
 
                         <div>
-                            <label for="color" class="block text-sm font-medium text-gray-700">Kleur</label>
+                            <label for="color" class="block text-sm font-medium text-gray-700">Vachtkleur</label>
                             <input type="text" wire:model="color" id="color"
                                    class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                        </div>
+
+                        <div>
+                            <label for="coat_type" class="block text-sm font-medium text-gray-700">Vachttype</label>
+                            <input type="text" wire:model="coat_type" id="coat_type"
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"
+                                   placeholder="Kort, lang, krullend...">
                         </div>
 
                         <div>

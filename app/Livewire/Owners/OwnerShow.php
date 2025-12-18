@@ -21,6 +21,7 @@ class OwnerShow extends Component
     public string $chip_number = '';
     public ?float $weight = null;
     public string $color = '';
+    public string $coat_type = '';
     public string $patient_notes = '';
 
     protected function rules(): array
@@ -35,6 +36,7 @@ class OwnerShow extends Component
             'chip_number' => 'nullable|string|max:50',
             'weight' => 'nullable|numeric|min:0|max:500',
             'color' => 'nullable|string|max:100',
+            'coat_type' => 'nullable|string|max:100',
             'patient_notes' => 'nullable|string',
         ];
     }
@@ -46,7 +48,7 @@ class OwnerShow extends Component
 
     public function createPatient(): void
     {
-        $this->reset(['patient_name', 'species', 'breed', 'date_of_birth', 'gender', 'neutered', 'chip_number', 'weight', 'color', 'patient_notes']);
+        $this->reset(['patient_name', 'species', 'breed', 'date_of_birth', 'gender', 'neutered', 'chip_number', 'weight', 'color', 'coat_type', 'patient_notes']);
         $this->species = 'dog';
         $this->gender = 'unknown';
         $this->showPatientForm = true;
@@ -66,6 +68,7 @@ class OwnerShow extends Component
             'chip_number' => $data['chip_number'],
             'weight' => $data['weight'],
             'color' => $data['color'],
+            'coat_type' => $data['coat_type'],
             'notes' => $data['patient_notes'],
         ]);
 

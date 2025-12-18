@@ -22,6 +22,7 @@ class Patient extends Model
         'chip_number',
         'weight',
         'color',
+        'coat_type',
         'allergies',
         'notes',
         'photo_path',
