@@ -8,8 +8,13 @@ return new class extends Migration
 {
     public function up(): void
     {
-        // Remove foreign key from treatments first
+        // Remove foreign keys from treatments and appointments first
         Schema::table('treatments', function (Blueprint $table) {
+            $table->dropForeign(['work_location_id']);
+            $table->dropColumn('work_location_id');
+        });
+
+        Schema::table('appointments', function (Blueprint $table) {
             $table->dropForeign(['work_location_id']);
             $table->dropColumn('work_location_id');
         });
@@ -60,8 +65,12 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Restore foreign key in treatments
+        // Restore foreign keys in treatments and appointments
         Schema::table('treatments', function (Blueprint $table) {
+            $table->foreignId('work_location_id')->nullable()->after('patient_id')->constrained()->nullOnDelete();
+        });
+
+        Schema::table('appointments', function (Blueprint $table) {
             $table->foreignId('work_location_id')->nullable()->after('patient_id')->constrained()->nullOnDelete();
         });
     }
