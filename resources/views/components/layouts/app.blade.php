@@ -29,10 +29,6 @@
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="{{ route('dashboard') }}"
-                                   class="{{ request()->routeIs('dashboard') ? 'bg-emerald-800 text-white' : 'text-emerald-100 hover:bg-emerald-600' }} rounded-md px-3 py-2 text-sm font-medium">
-                                    Dashboard
-                                </a>
                                 <a href="{{ route('owners.index') }}"
                                    class="{{ request()->routeIs('owners.*') || request()->routeIs('patients.*') ? 'bg-emerald-800 text-white' : 'text-emerald-100 hover:bg-emerald-600' }} rounded-md px-3 py-2 text-sm font-medium">
                                     Eigenaren
@@ -43,6 +39,12 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <a href="{{ route('dashboard') }}"
+                           class="{{ request()->routeIs('dashboard') ? 'bg-emerald-800 text-white' : 'text-emerald-100 hover:bg-emerald-600' }} rounded-md px-3 py-2 text-sm font-medium">
+                            Dashboard
+                        </a>
                     </div>
                 </div>
             </div>
