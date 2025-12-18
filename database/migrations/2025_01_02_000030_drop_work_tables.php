@@ -8,6 +8,12 @@ return new class extends Migration
 {
     public function up(): void
     {
+        // Remove foreign key from treatments first
+        Schema::table('treatments', function (Blueprint $table) {
+            $table->dropForeign(['work_location_id']);
+            $table->dropColumn('work_location_id');
+        });
+
         // Drop work_sessions first (has foreign key to work_locations)
         Schema::dropIfExists('work_sessions');
         Schema::dropIfExists('work_locations');
@@ -15,7 +21,7 @@ return new class extends Migration
 
     public function down(): void
     {
-        // Recreate work_locations
+        // Recreate work_locations first (needed for foreign key)
         Schema::create('work_locations', function (Blueprint $table) {
             $table->id();
             $table->enum('type', ['clinic', 'home_visit', 'own_practice'])->default('clinic');
@@ -52,6 +58,11 @@ return new class extends Migration
             $table->unsignedBigInteger('havunadmin_invoice_id')->nullable();
             $table->enum('status', ['draft', 'submitted', 'invoiced'])->default('draft');
             $table->timestamps();
+        });
+
+        // Restore foreign key in treatments
+        Schema::table('treatments', function (Blueprint $table) {
+            $table->foreignId('work_location_id')->nullable()->after('patient_id')->constrained()->nullOnDelete();
         });
     }
 };

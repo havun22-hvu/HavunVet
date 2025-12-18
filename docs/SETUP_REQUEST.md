@@ -6,16 +6,12 @@ Graag aanmaken op server 188.245.159.115:
 
 ```sql
 CREATE DATABASE havunvet_staging CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'havunvet'@'localhost' IDENTIFIED BY '[WACHTWOORD]';
+CREATE USER 'havunvet'@'localhost' IDENTIFIED BY 'aAOon9yeBuNTjJdKt3Q';
 GRANT ALL PRIVILEGES ON havunvet_staging.* TO 'havunvet'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-Of: toegang geven via bestaande MySQL user (zelfde als HavunAdmin?).
-
 ## .env Staging
-
-Na MySQL setup, aanpassen in `/var/www/havunvet/staging/.env`:
 
 ```env
 DB_CONNECTION=mysql
@@ -23,7 +19,7 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=havunvet_staging
 DB_USERNAME=havunvet
-DB_PASSWORD=[WACHTWOORD]
+DB_PASSWORD=aAOon9yeBuNTjJdKt3Q
 ```
 
 Daarna draaien:
