@@ -1,39 +1,44 @@
-# HavunVet Staging - Setup Request
+# HavunVet Server Setup
+
+## Server
+
+- **IP:** 188.245.159.115
+- **Staging path:** /var/www/havunvet/staging
+- **Production path:** /var/www/havunvet/production
 
 ## MySQL Database
 
-Graag aanmaken op server 188.245.159.115:
-
-```sql
-CREATE DATABASE havunvet_staging CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'havunvet'@'localhost' IDENTIFIED BY 'aAOon9yeBuNTjJdKt3Q';
-GRANT ALL PRIVILEGES ON havunvet_staging.* TO 'havunvet'@'localhost';
-FLUSH PRIVILEGES;
 ```
-
-## .env Staging
-
-```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=havunvet_staging
 DB_USERNAME=havunvet
-DB_PASSWORD=aAOon9yeBuNTjJdKt3Q
+DB_PASSWORD=<see .env on server>
 ```
 
-Daarna draaien:
-```bash
-cd /var/www/havunvet/staging
-php artisan migrate --force
-php artisan config:clear
-```
+## URLs
 
-## Status
+- **Staging:** https://staging.havunvet.havun.nl
+- **Production:** https://havunvet.havun.nl (nog niet actief)
+
+## Status Staging
 
 - [x] Nginx config aangemaakt
 - [x] SSL certificaat actief
 - [x] Code gedeployed
-- [ ] MySQL database aanmaken
-- [ ] .env configureren voor MySQL
-- [ ] Migrations draaien op MySQL
+- [x] MySQL database aangemaakt
+- [x] .env geconfigureerd voor MySQL
+- [x] Migrations gedraaid
+
+## Deploy Commands
+
+```bash
+cd /var/www/havunvet/staging
+git pull
+composer install --no-dev --optimize-autoloader
+npm install && npm run build
+php artisan migrate --force
+php artisan config:clear
+php artisan cache:clear
+```
