@@ -12,7 +12,7 @@
     <!-- Search -->
     <div class="mb-4">
         <input type="text" wire:model.live.debounce.300ms="search"
-               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"
+               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 placeholder:text-center focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"
                placeholder="Zoek eigenaar, dier, plaats, postcode, telefoon...">
     </div>
 
@@ -88,6 +88,13 @@
                             <label for="city" class="block text-sm font-medium text-gray-700">Plaats</label>
                             <input type="text" wire:model="city" id="city"
                                    class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                        </div>
+
+                        <div>
+                            <label for="ubn" class="block text-sm font-medium text-gray-700">UBN (fokkers)</label>
+                            <input type="text" wire:model="ubn" id="ubn"
+                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"
+                                   placeholder="Optioneel">
                         </div>
 
                         <div class="flex items-end">

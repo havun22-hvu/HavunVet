@@ -23,6 +23,7 @@ class OwnerIndex extends Component
     public string $house_number = '';
     public string $address = '';
     public string $city = '';
+    public string $ubn = '';
     public string $notes = '';
     public bool $active = true;
 
@@ -39,6 +40,7 @@ class OwnerIndex extends Component
             'house_number' => 'nullable|string|max:20',
             'address' => 'nullable|string|max:255',
             'city' => 'nullable|string|max:255',
+            'ubn' => 'nullable|string|max:50',
             'notes' => 'nullable|string',
             'active' => 'boolean',
         ];
@@ -51,7 +53,7 @@ class OwnerIndex extends Component
 
     public function create(): void
     {
-        $this->reset(['editing', 'name', 'email', 'phone', 'phone2', 'postal_code', 'house_number', 'address', 'city', 'notes', 'active', 'lookupError']);
+        $this->reset(['editing', 'name', 'email', 'phone', 'phone2', 'postal_code', 'house_number', 'address', 'city', 'ubn', 'notes', 'active', 'lookupError']);
         $this->active = true;
         $this->showForm = true;
     }
@@ -67,6 +69,7 @@ class OwnerIndex extends Component
         $this->house_number = $owner->house_number ?? '';
         $this->address = $owner->address ?? '';
         $this->city = $owner->city ?? '';
+        $this->ubn = $owner->ubn ?? '';
         $this->notes = $owner->notes ?? '';
         $this->active = $owner->active;
         $this->lookupError = '';

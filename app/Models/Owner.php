@@ -19,6 +19,7 @@ class Owner extends Model
         'house_number',
         'postal_code',
         'city',
+        'ubn',
         'notes',
         'active',
     ];
@@ -78,6 +79,7 @@ class Owner extends Model
               ->orWhere('address', 'like', "%{$search}%")
               ->orWhere('postal_code', 'like', "%{$search}%")
               ->orWhere('city', 'like', "%{$search}%")
+              ->orWhere('ubn', 'like', "%{$search}%")
               ->orWhereHas('patients', function ($pq) use ($search) {
                   $pq->where('name', 'like', "%{$search}%")
                     ->orWhere('chip_number', 'like', "%{$search}%");
