@@ -34,12 +34,8 @@
                                     Dashboard
                                 </a>
                                 <a href="{{ route('owners.index') }}"
-                                   class="{{ request()->routeIs('owners.*') ? 'bg-emerald-800 text-white' : 'text-emerald-100 hover:bg-emerald-600' }} rounded-md px-3 py-2 text-sm font-medium">
+                                   class="{{ request()->routeIs('owners.*') || request()->routeIs('patients.*') ? 'bg-emerald-800 text-white' : 'text-emerald-100 hover:bg-emerald-600' }} rounded-md px-3 py-2 text-sm font-medium">
                                     Eigenaren
-                                </a>
-                                <a href="{{ route('patients.index') }}"
-                                   class="{{ request()->routeIs('patients.*') ? 'bg-emerald-800 text-white' : 'text-emerald-100 hover:bg-emerald-600' }} rounded-md px-3 py-2 text-sm font-medium">
-                                    Patiënten
                                 </a>
                                 <a href="{{ route('appointments.index') }}"
                                    class="{{ request()->routeIs('appointments.*') ? 'bg-emerald-800 text-white' : 'text-emerald-100 hover:bg-emerald-600' }} rounded-md px-3 py-2 text-sm font-medium">

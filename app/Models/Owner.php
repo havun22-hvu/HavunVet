@@ -74,7 +74,14 @@ class Owner extends Model
             $q->where('name', 'like', "%{$search}%")
               ->orWhere('email', 'like', "%{$search}%")
               ->orWhere('phone', 'like', "%{$search}%")
-              ->orWhere('city', 'like', "%{$search}%");
+              ->orWhere('phone2', 'like', "%{$search}%")
+              ->orWhere('address', 'like', "%{$search}%")
+              ->orWhere('postal_code', 'like', "%{$search}%")
+              ->orWhere('city', 'like', "%{$search}%")
+              ->orWhereHas('patients', function ($pq) use ($search) {
+                  $pq->where('name', 'like', "%{$search}%")
+                    ->orWhere('chip_number', 'like', "%{$search}%");
+              });
         });
     }
 }
