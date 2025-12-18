@@ -219,10 +219,10 @@ POST   /api/v1/treatments                // Behandeling + factuur trigger
 - SQLite of MySQL
 - API: Laravel Sanctum
 
-## URLs (gepland)
+## URLs
 
-- **Production:** https://vet.havun.nl
-- **Staging:** https://staging.vet.havun.nl
+- **Production:** https://havunvet.havun.nl
+- **Staging:** https://staging.havunvet.havun.nl
 
 ## Deployment
 
