@@ -8,6 +8,7 @@ use App\Livewire\Patients\PatientForm;
 use App\Livewire\Patients\PatientIndex;
 use App\Livewire\Patients\PatientShow;
 use App\Livewire\Treatments\TreatmentForm;
+use App\Services\PostcodeService;
 use Illuminate\Support\Facades\Route;
 
 // Dashboard
@@ -29,3 +30,13 @@ Route::get('/patients/{patient}/treatments/{treatment}/edit', TreatmentForm::cla
 
 // Appointments (Afspraken)
 Route::get('/appointments', AppointmentIndex::class)->name('appointments.index');
+
+// API: Postcode lookup
+Route::get('/api/postcode/{postcode}/{huisnummer}', function (string $postcode, string $huisnummer) {
+    $service = new PostcodeService();
+    $address = $service->lookup($postcode, $huisnummer);
+
+    return $address
+        ? response()->json($address)
+        : response()->json(['error' => 'Adres niet gevonden'], 404);
+})->name('api.postcode');
