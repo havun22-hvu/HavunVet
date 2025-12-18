@@ -113,14 +113,14 @@
                         <div class="sm:col-span-2">
                             <label for="patient_name" class="block text-sm font-medium text-gray-700">Naam *</label>
                             <input type="text" wire:model="patient_name" id="patient_name"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                             @error('patient_name') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
                         </div>
 
                         <div>
                             <label for="species" class="block text-sm font-medium text-gray-700">Diersoort *</label>
                             <select wire:model="species" id="species"
-                                    class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                    class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                                 <option value="dog">Hond</option>
                                 <option value="cat">Kat</option>
                                 <option value="rabbit">Konijn</option>
@@ -134,19 +134,19 @@
                         <div>
                             <label for="breed" class="block text-sm font-medium text-gray-700">Ras</label>
                             <input type="text" wire:model="breed" id="breed"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                         </div>
 
                         <div>
                             <label for="date_of_birth" class="block text-sm font-medium text-gray-700">Geboortedatum</label>
                             <input type="date" wire:model="date_of_birth" id="date_of_birth"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                         </div>
 
                         <div>
                             <label for="gender" class="block text-sm font-medium text-gray-700">Geslacht</label>
                             <select wire:model="gender" id="gender"
-                                    class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                    class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                                 <option value="unknown">Onbekend</option>
                                 <option value="male">Mannelijk</option>
                                 <option value="female">Vrouwelijk</option>
@@ -156,19 +156,19 @@
                         <div>
                             <label for="color" class="block text-sm font-medium text-gray-700">Kleur</label>
                             <input type="text" wire:model="color" id="color"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                         </div>
 
                         <div>
                             <label for="weight" class="block text-sm font-medium text-gray-700">Gewicht (kg)</label>
                             <input type="number" wire:model="weight" id="weight" step="0.1"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                         </div>
 
                         <div>
                             <label for="chip_number" class="block text-sm font-medium text-gray-700">Chipnummer</label>
                             <input type="text" wire:model="chip_number" id="chip_number"
-                                   class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
+                                   class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm">
                         </div>
 
                         <div class="flex items-center">
@@ -182,7 +182,7 @@
                         <div class="sm:col-span-2">
                             <label for="patient_notes" class="block text-sm font-medium text-gray-700">Notities</label>
                             <textarea wire:model="patient_notes" id="patient_notes" rows="3"
-                                      class="mt-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"></textarea>
+                                      class="mt-1 block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm"></textarea>
                         </div>
                     </div>
 
