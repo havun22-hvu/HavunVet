@@ -38,8 +38,8 @@ Zie `/docs/` folder:
 
 ```bash
 composer install && npm install
-npm run dev          # Terminal 1
-php artisan serve    # Terminal 2
+npm run dev                      # Terminal 1: Vite
+php artisan serve --port=8008    # Terminal 2: http://localhost:8008
 ```
 
 ## Deploy
