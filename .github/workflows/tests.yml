@@ -32,7 +32,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
-          coverage: none
+          coverage: pcov
 
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
@@ -49,8 +49,16 @@ jobs:
       - name: Generate app key
         run: php artisan key:generate
 
+      - name: Create bootstrap cache
+        run: mkdir -p bootstrap/cache
+
       - name: Create database
         run: touch database/database.sqlite
 
-      - name: Execute tests
-        run: php artisan test
+      - name: Execute tests with coverage
+        run: php -d pcov.directory=app vendor/bin/phpunit --coverage-text --colors=never
+        env:
+          BROADCAST_CONNECTION: 'null'
+
+      - name: Composer audit
+        run: composer audit
