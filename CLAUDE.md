@@ -19,6 +19,16 @@
 
 > Dierenarts praktijkbeheer (Laravel 11 + Livewire 3)
 
+## De 5 Onschendbare Regels
+
+```
+1. NOOIT code schrijven zonder KB + kwaliteitsnormen te raadplegen
+2. NOOIT features/UI-elementen verwijderen zonder instructie
+3. NOOIT credentials/keys/env aanraken
+4. ALTIJD tests draaien voor én na wijzigingen (coverage >80%)
+5. ALTIJD toestemming vragen bij grote wijzigingen
+```
+
 ## Quick Info
 
 | Item | Waarde |
