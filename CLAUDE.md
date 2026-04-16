@@ -18,6 +18,7 @@
 ```
 
 > Dierenarts praktijkbeheer (Laravel 11 + Livewire 3)
+> **Onveranderlijke regels:** Zie [`CONTRACTS.md`](CONTRACTS.md) — bij elke wijziging eerst raadplegen.
 
 ## De 5 Onschendbare Regels
 
