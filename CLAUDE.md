@@ -1,82 +1,41 @@
-# HavunVet
+# HavunVet — Claude Instructions
 
-```
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔ STOP! LEES DIT VOORDAT JE IETS DOET                          ║
-║                                                                   ║
-║  GEEN CODE SCHRIJVEN VOORDAT JE ANTWOORD GEEFT OP:               ║
-║                                                                   ║
-║  1. "Wat staat er in de docs over dit onderwerp?"                ║
-║  2. "Waar staat dat?" (geef bestandsnaam + regelnummer)          ║
-║  3. "Is er iets inconsistent of ontbrekend?"                     ║
-║                                                                   ║
-║  PAS DAARNA mag je code voorstellen.                             ║
-║  Gebruiker moet EERST akkoord geven.                             ║
-║                                                                   ║
-║  ⚠️  Bij twijfel: /kb of vraag aan gebruiker                     ║
-╚══════════════════════════════════════════════════════════════════╝
-```
-
-> Dierenarts praktijkbeheer (Laravel 11 + Livewire 3)
-> **Onveranderlijke regels:** Zie [`CONTRACTS.md`](CONTRACTS.md) — bij elke wijziging eerst raadplegen.
+> Dierenartspraktijk-beheer (Laravel 11 + Livewire 3 + Tailwind, MySQL)
+> **Staging:** https://staging.havunvet.havun.nl
+> **Onveranderlijke regels:** [`CONTRACTS.md`](CONTRACTS.md) — eerst raadplegen.
+> **Detail-docs:** `docs/INDEX.md`
 
 ## De 5 Onschendbare Regels
 
-```
 1. NOOIT code schrijven zonder KB + kwaliteitsnormen te raadplegen
 2. NOOIT features/UI-elementen verwijderen zonder instructie
 3. NOOIT credentials/keys/env aanraken
 4. ALTIJD tests draaien voor én na wijzigingen (coverage >80%)
 5. ALTIJD toestemming vragen bij grote wijzigingen
-```
 
-## Quick Info
+## Architectuur (samenvatting)
 
-| Item | Waarde |
-|------|--------|
-| Type | Standalone praktijkbeheer voor ZZP dierenarts |
-| Stack | Laravel 11, Livewire 3, Tailwind CSS, MySQL |
-| Staging | https://staging.havunvet.havun.nl |
-| Server | 188.245.159.115 |
+HavunVet (eigenaren, patiënten, behandelingen, medicijnen, afspraken) ↔ HavunAdmin (klanten, facturatie, BTW). Volledig diagram + relaties: `docs/DATABASE.md`.
 
-## Architectuur
+## Kerndocs
 
-```
-HavunVet                          HavunAdmin
-├── Eigenaren                     ├── Klanten (master)
-├── Patiënten (dieren)      ←→    ├── Facturatie
-├── Behandelingen                 └── BTW/Uitgaven
-├── Medicijnen
-└── Afspraken
-```
+- `docs/SERVER.md` — server + deploy
+- `docs/HAVUNADMIN_INTEGRATION.md` — API-koppeling
+- `docs/FEATURES.md` — features & roadmap
 
-## Documentatie
-
-Zie `/docs/` folder:
-
-| Document | Inhoud |
-|----------|--------|
-| [INDEX.md](docs/INDEX.md) | Overzicht alle documentatie |
-| [DATABASE.md](docs/DATABASE.md) | Database schema en relaties |
-| [SERVER.md](docs/SERVER.md) | Server configuratie en deployment |
-| [FEATURES.md](docs/FEATURES.md) | Features en roadmap |
-| [HAVUNADMIN_INTEGRATION.md](docs/HAVUNADMIN_INTEGRATION.md) | API koppeling met HavunAdmin |
-
-## Development
+## Development snelreferentie
 
 ```bash
 composer install && npm install
-npm run dev                      # Terminal 1: Vite
-php artisan serve --port=8008    # Terminal 2: http://localhost:8008
+npm run dev                      # Terminal 1
+php artisan serve --port=8008    # Terminal 2
 ```
 
-## Deploy
+## Deploy (staging)
 
 ```bash
-cd /var/www/havunvet/staging
-git pull
+cd /var/www/havunvet/staging && git pull
 composer install --no-dev --optimize-autoloader
-npm run build
-php artisan migrate --force
+npm run build && php artisan migrate --force
 php artisan config:clear && php artisan cache:clear
 ```
